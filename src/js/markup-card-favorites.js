@@ -16,40 +16,84 @@ async function objDataForMarkup(idDish) {
   }
 }
 
-async function markupCardFavorites(id) {
-  const objData = await objDataForMarkup(id);
-  console.log(objData);
-  const markup = `<li>  <button>
-                            <svg aria-label="heart" class="icon-star icon">
-                                <use href="./img/icons.svg#icon-star"></use>
-                            </svg>
-                        </button>
-                        <img src="" alt="${objData.title}">
-                        <div>
-                            <p></p>
-                            <p></p>
-                            <div>
-                                <div>
-                                    <svg aria-label="heart" class="icon-star icon">
-                                        <use href="./img/icons.svg#icon-star"></use>
-                                    </svg>
-                                    <svg aria-label="heart" class="icon-star icon">
-                                        <use href="./img/icons.svg#icon-star"></use>
-                                    </svg>
-                                    <svg aria-label="heart" class="icon-star icon">
-                                        <use href="./img/icons.svg#icon-star"></use>
-                                    </svg>
-                                    <svg aria-label="heart" class="icon-star icon">
-                                        <use href="./img/icons.svg#icon-star"></use>
-                                    </svg>
-                                    <svg aria-label="heart" class="icon-star icon">
-                                        <use href="./img/icons.svg#icon-star"></use>
-                                    </svg>                                    
-                                </div>
-                                <button></button>
-                            </div>
-                        </div>
-                    </li>`;
+async function markupCardFavorites(idArr) {
+  try {
+    const markup = idArr.map(async id => {
+      const objData = await objDataForMarkup(id);
+      console.log(objData);
+    });
+  } catch (error) {
+    console.log(error.message);
+  }
 }
 
-markupCardFavorites('6462a8f74c3d0ddd28897fb8');
+//   const objData = await objDataForMarkup(id);
+//   console.log(objData);
+//   const markup = `<li>  <button>
+//                             <svg aria-label="heart" class="icon-star icon">
+//                                 <use href="./img/icons.svg#icon-star"></use>
+//                             </svg>
+//                         </button>
+//                         <img src="" alt="${objData.title}">
+//                         <div>
+//                             <p></p>
+//                             <p></p>
+//                             <div>
+//                                 <div>
+//                                     <svg aria-label="heart" class="icon-star icon">
+//                                         <use href="./img/icons.svg#icon-star"></use>
+//                                     </svg>
+//                                     <svg aria-label="heart" class="icon-star icon">
+//                                         <use href="./img/icons.svg#icon-star"></use>
+//                                     </svg>
+//                                     <svg aria-label="heart" class="icon-star icon">
+//                                         <use href="./img/icons.svg#icon-star"></use>
+//                                     </svg>
+//                                     <svg aria-label="heart" class="icon-star icon">
+//                                         <use href="./img/icons.svg#icon-star"></use>
+//                                     </svg>
+//                                     <svg aria-label="heart" class="icon-star icon">
+//                                         <use href="./img/icons.svg#icon-star"></use>
+//                                     </svg>
+//                                 </div>
+//                                 <button></button>
+//                             </div>
+//                         </div>
+//                     </li>`;
+// }
+
+markupCardFavorites(['6462a8f74c3d0ddd28897fb8', '6462a8f74c3d0ddd28897fba']);
+
+// export function createGalleryMarkup(photoArr) {
+//     return photoArr
+//       .map(
+//         ({
+//           webformatURL,
+//           largeImageURL,
+//           tags,
+//           likes,
+//           views,
+//           comments,
+//           downloads,
+//         }) => `<div class="photo-card">
+//                    <a class="card-link" href="${largeImageURL}">
+//                       <img src="${webformatURL}" alt="${tags}" loading="lazy" />
+//                       <div class="info">
+//                           <p class="info-item">
+//                               <b>Likes ${likes}</b>
+//                           </p>
+//                           <p class="info-item">
+//                               <b>Views ${views}</b>
+//                           </p>
+//                           <p class="info-item">
+//                               <b>Comments ${comments}</b>
+//                           </p>
+//                           <p class="info-item">
+//                               <b>Downloads ${downloads}</b>
+//                           </p>
+//                       </div>
+//                    </a>
+//                  </div>`
+//       )
+//       .join('');
+//   }
