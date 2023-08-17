@@ -9,7 +9,7 @@ async function objDataForMarkup(idDish) {
       title: `${data.title}`,
       description: `${data.description}`,
       rating: `${data.rating}`,
-    };    
+    };
     return objData;
   } catch (error) {
     console.log(error.message);
@@ -17,11 +17,14 @@ async function objDataForMarkup(idDish) {
 }
 
 async function markupCardFavorites(id) {
-    const objData = await objDataForMarkup(id);
-    console.log(objData);
-    const markup = `<li>
-                        <button></button>
-                        <img src="" alt="">
+  const objData = await objDataForMarkup(id);
+  console.log(objData);
+  const markup = `<li>  <button>
+                            <svg aria-label="heart" class="icon-star icon">
+                                <use href="./img/icons.svg#icon-star"></use>
+                            </svg>
+                        </button>
+                        <img src="" alt="${objData.title}">
                         <div>
                             <p></p>
                             <p></p>
@@ -41,12 +44,12 @@ async function markupCardFavorites(id) {
                                     </svg>
                                     <svg aria-label="heart" class="icon-star icon">
                                         <use href="./img/icons.svg#icon-star"></use>
-                                    </svg>
-                                    
+                                    </svg>                                    
                                 </div>
                                 <button></button>
                             </div>
                         </div>
-                    </li>`
+                    </li>`.join('');
 }
-markupCardFavorites('6462a8f74c3d0ddd28897fb8')
+
+markupCardFavorites('6462a8f74c3d0ddd28897fb8');
