@@ -1,6 +1,7 @@
 const dishListEl = document.querySelector('.favorites-cards');
 
 export function markupCardFavorites(dishArr) {
+    console.log(dishArr);
   const markup = dishArr
     .map(
       ({ _id, preview, title, description, rating }) =>
