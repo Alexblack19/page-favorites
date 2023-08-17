@@ -1,0 +1,19 @@
+
+body {
+    background-color: tomato;
+}
+
+.container {
+    width: 375px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0, 20;   
+}
+
+
+.icon-heart{
+    width: 22px;
+    height: 22px;
+    fill: #F8F8F8;
+
+}
