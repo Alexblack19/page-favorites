@@ -1,0 +1,41 @@
+import { fetchDishFavorites } from './fetch-dish-favorites.js';
+
+async function objDataForMarkup(idDish) {
+  try {
+    const data = await fetchDishFavorites(idDish);    
+    const objData = {
+      id: `${data._id}`,
+      img: `${data.preview}`,
+      title: `${data.title}`,
+      description: `${data.description}`,
+      rating: `${data.rating}`,
+    };    
+    return objData;
+  } catch (error) {
+    console.log(error.message);
+  }
+}
+
+async function markupCardFavorites(id) {
+    const objData = await objDataForMarkup(id);
+    console.log(objData);
+    const markup = `<li>
+                        <button></button>
+                        <img src="" alt="">
+                        <div>
+                            <p></p>
+                            <p></p>
+                            <div>
+                                <div>
+                                    <svg></svg>
+                                    <svg></svg>
+                                    <svg></svg>
+                                    <svg></svg>
+                                    <svg></svg>
+                                </div>
+                                <button></button>
+                            </div>
+                        </div>
+                    </li>`
+}
+markupCardFavorites('6462a8f74c3d0ddd28897fb8')

@@ -1,0 +1,7 @@
+<!-- Favorites	 -->
+<section class="favorites section">
+  <div class="container">
+    <!-- Food cards  -->
+    <ul class="favorites-cards list"></ul>
+  </div>
+</section>
