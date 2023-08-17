@@ -49,7 +49,7 @@ async function markupCardFavorites(id) {
                                 <button></button>
                             </div>
                         </div>
-                    </li>`.join('');
+                    </li>`;
 }
 
 markupCardFavorites('6462a8f74c3d0ddd28897fb8');
