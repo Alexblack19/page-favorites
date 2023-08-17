@@ -2,7 +2,7 @@ import { fetchDishFavorites } from './fetch-dish-favorites.js';
 
 async function objDataForMarkup(idDish) {
   try {
-    const data = await fetchDishFavorites(idDish);    
+    const data = await fetchDishFavorites(idDish);
     const objData = {
       id: `${data._id}`,
       img: `${data.preview}`,
@@ -27,11 +27,22 @@ async function markupCardFavorites(id) {
                             <p></p>
                             <div>
                                 <div>
-                                    <svg></svg>
-                                    <svg></svg>
-                                    <svg></svg>
-                                    <svg></svg>
-                                    <svg></svg>
+                                    <svg aria-label="heart" class="icon-star icon">
+                                        <use href="./img/icons.svg#icon-star"></use>
+                                    </svg>
+                                    <svg aria-label="heart" class="icon-star icon">
+                                        <use href="./img/icons.svg#icon-star"></use>
+                                    </svg>
+                                    <svg aria-label="heart" class="icon-star icon">
+                                        <use href="./img/icons.svg#icon-star"></use>
+                                    </svg>
+                                    <svg aria-label="heart" class="icon-star icon">
+                                        <use href="./img/icons.svg#icon-star"></use>
+                                    </svg>
+                                    <svg aria-label="heart" class="icon-star icon">
+                                        <use href="./img/icons.svg#icon-star"></use>
+                                    </svg>
+                                    
                                 </div>
                                 <button></button>
                             </div>
