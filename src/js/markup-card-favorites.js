@@ -8,6 +8,7 @@ async function objDataForMarkup(idDish) {
       img: `${data.preview}`,
       title: `${data.title}`,
       description: `${data.description}`,
+      category: `${data.category}`,
       rating: `${data.rating}`,
     };
     return objData;
