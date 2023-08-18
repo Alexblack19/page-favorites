@@ -48,9 +48,19 @@ export function markupCardFavorites(dishArr) {
     .join('');
   dishListEl.insertAdjacentHTML('beforeend', markup);
   localStorageSet(dishArr);
+  const heartBtnEl = document.querySelector('.fav-card-heart-btn');
+  heartBtnEl.addEventListener('click', onDelCardFav);
+  function onDelCardFav(e) {
+    console.log('clickDel');
+  }
+  const seeBtnEl = document.querySelector('.fav-card-see-btn');
+  seeBtnEl.addEventListener('click', onSeeInfoDish);
+  function onSeeInfoDish(e) {
+    console.log('clickSEE');
+  }
 }
 
-function localStorageSet(dishArr) {  
+function localStorageSet(dishArr) {
   localStorage.setItem('dishArr', JSON.stringify(dishArr));
 }
 
@@ -59,10 +69,3 @@ function localStorageGet() {
   markupCardFavorites(local);
   return local;
 }
-
-
-// const heartBtnEl = document.querySelector('.fav-card-see-btn');
-// heartBtnEl.addEventListener('click', onDelCardFav);
-// function onDelCardFav(e) {
-//   console.log('click');;
-// }
