@@ -1,36 +1,38 @@
 const dishListEl = document.querySelector('.favorites-cards');
 
 export function markupCardFavorites(dishArr) {
-  console.log(dishArr);  
+  console.log(dishArr);
+  const patchStar =
+    '<path d="M13.826 3.262c0.684-2.106 3.663-2.106 4.348 0l1.932 5.945c0.306 0.942 1.184 1.579 2.174 1.579h6.251c2.214 0 3.135 2.833 1.344 4.135l-5.057 3.674c-0.801 0.582-1.136 1.614-0.83 2.556l1.931 5.945c0.684 2.106-1.726 3.857-3.517 2.555l-5.057-3.674c-0.801-0.582-1.886-0.582-2.687 0l-5.057 3.674c-1.791 1.302-4.202-0.45-3.517-2.555l1.932-5.945c0.306-0.942-0.029-1.973-0.83-2.556l-5.057-3.674c-1.791-1.302-0.871-4.135 1.344-4.135h6.251c0.99 0 1.868-0.638 2.174-1.579l1.932-5.945z"></path>';
   const markup = dishArr
     .map(
       ({ _id, preview, thumb, title, description, rating }) =>
         `<li class="fav-card item">
             <button class="fav-card-heart-btn">
                 <svg aria-label="heart" class="fav-card-heart icon" viewBox="0 0 32 32">
-                <path d="M27.787 6.147c-0.681-0.681-1.49-1.222-2.38-1.591s-1.844-0.559-2.807-0.559-1.917 0.19-2.807 0.559c-0.89 0.369-1.699 0.909-2.38 1.591l-1.413 1.413-1.413-1.413c-1.376-1.376-3.241-2.148-5.187-2.148s-3.811 0.773-5.187 2.148c-1.376 1.376-2.148 3.241-2.148 5.187s0.773 3.811 2.148 5.187l11.787 11.787 11.787-11.787c0.681-0.681 1.222-1.49 1.591-2.38s0.559-1.844 0.559-2.807c0-0.963-0.19-1.917-0.559-2.807s-0.909-1.699-1.591-2.38v0z"></path>
+                  <path opacity="1"  d="M15.992 6.848c-2.666-3.117-7.111-3.955-10.451-1.101s-3.81 7.625-1.187 11c2.181 2.806 8.781 8.725 10.944 10.641 0.242 0.214 0.363 0.321 0.504 0.364 0.123 0.037 0.258 0.037 0.381 0 0.141-0.042 0.262-0.149 0.504-0.364 2.163-1.916 8.763-7.834 10.944-10.641 2.623-3.375 2.21-8.177-1.187-11.001s-7.785-2.015-10.451 1.101z"></path>
                 </svg>
             </button>
-            <img class="fav-card-img" src="${thumb}" alt="${title}">            
+            <img class="fav-card-img" src="${thumb}" alt="${title}">
             <h3 class="fav-card-title">${title}</h3>
             <p class="fav-card-desc">${description}</p>
             <div сlass="fav-card-info-wrap">
-                <div>
+                <div class="fav-rating-wrap">
                     <span class="fav-card-rating">${rating}</span>
-                    <svg aria-label="star" class="fav-card-star icon">
-                        <use href="./img/icons.svg#icon-star"></use>
+                    <svg aria-label="star" class="fav-card-star icon" viewBox="0 0 32 32">
+                    ${patchStar}
                     </svg>
-                    <svg aria-label="star" class="fav-card-star icon">
-                        <use href="./img/icons.svg#icon-star"></use>
+                    <svg aria-label="star" class="fav-card-star icon" viewBox="0 0 32 32">
+                    ${patchStar}
                     </svg>
-                    <svg aria-label="star" class="fav-card-star icon">
-                        <use href="./img/icons.svg#icon-star"></use>
+                    <svg aria-label="star" class="fav-card-star icon" viewBox="0 0 32 32">
+                    ${patchStar}
                     </svg>
-                    <svg aria-label="star" class="fav-card-star icon">
-                        <use href="./img/icons.svg#icon-star"></use>
+                    <svg aria-label="star" class="fav-card-star icon" viewBox="0 0 32 32">
+                    ${patchStar}
                     </svg>
-                    <svg aria-label="star" class="fav-card-star icon">
-                        <use href="./img/icons.svg#icon-star"></use>
+                    <svg aria-label="star" class="fav-card-star icon" viewBox="0 0 32 32">
+                    ${patchStar}
                     </svg>
                 </div>
                 <button class="fav-card-see-btn">See recipe</button>
