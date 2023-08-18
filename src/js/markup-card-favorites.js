@@ -1,14 +1,14 @@
 const dishListEl = document.querySelector('.favorites-cards');
 
 export function markupCardFavorites(dishArr) {
-  console.log(dishArr);
+  console.log(dishArr);  
   const markup = dishArr
     .map(
       ({ _id, preview, thumb, title, description, rating }) =>
         `<li class="fav-card item">
             <button class="fav-card-heart-btn">
                 <svg aria-label="heart" class="fav-card-heart icon">
-                    <use href="./img/icons.svg#icon-astronaut"></use>
+                <path d="M15.992 6.848c-2.666-3.117-7.111-3.955-10.451-1.101s-3.81 7.625-1.187 11c2.181 2.806 8.781 8.725 10.944 10.641 0.242 0.214 0.363 0.321 0.504 0.364 0.123 0.037 0.258 0.037 0.381 0 0.141-0.042 0.262-0.149 0.504-0.364 2.163-1.916 8.763-7.834 10.944-10.641 2.623-3.375 2.21-8.177-1.187-11.001s-7.785-2.015-10.451 1.101z"></path>
                 </svg>
             </button>
             <img class="fav-card-img" src="${thumb}" alt="${title}">            
