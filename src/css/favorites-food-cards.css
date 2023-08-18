@@ -29,21 +29,10 @@
 
 .fav-card-heart,
 .fav-card-star {
-  z-index: 100;
-  /* display: block;
-  width: 22px;
-  height: 22px;
-  fill: #ed1212;
- */
-
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-  stroke-width: 0;
+ 
   
-  stroke: tomato;
-
-
+  width: 40px;
+  height: 40px;
 }
 
 .fav-card {
@@ -116,12 +105,10 @@
   justify-content: center;
   align-items: center;
 
-  width: 122px;
-  height: 122px;
+  width: 45px;
+  height: 45px;
   border: none;  
 }
 
-.fav-card-info-wrap {
-  display: flex;  
-}
+
 
