@@ -103,38 +103,60 @@
 }
 
 .fav-card-info-wrap {
-  display: flex;  
-  justify-content: space-between;
-  align-items: center;
-  
-  
+  display: flex;
+  /* justify-content: space-between;
+  align-items: center; */
 }
 
-.fav-card-rating {    
+.fav-card-rating {
   font-family: Inter;
-  font-size: 14px;  
+  font-size: 14px;
   font-weight: 500;
   line-height: calc(18 / 14);
   color: #f8f8f8;
 }
+/* =================== */
+.fav-rating-wrap {
+  position: relative;
+}
 
-.fav-rating-wrap{
+.fav-rating-active {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.fav-rating-active::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  color: #eea10c;
+}
+/* ===================== */
+
+.fav-rating-wrap {
   display: flex;
-  align-items: center;  
+  align-items: center;
   column-gap: 3px;
-  
 }
 
 .fav-card-star {
   width: 18px;
   height: 18px;
-  fill: #f8f8f8; 
-  opacity: 0.1;  
+  fill: #f8f8f8;
+  opacity: 0.1;
 }
 
-.fav-card-star:hover{
-  fill: #EEA10C;; 
-  opacity: 1;  
+.fav-card-star:hover {
+  /* fill: #eea10c; */
+  opacity: 1;
 }
 
 .fav-card-see-btn {

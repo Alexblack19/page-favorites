@@ -19,6 +19,7 @@ export function markupCardFavorites(dishArr) {
             <div сlass="fav-card-info-wrap">
                 <div class="fav-rating-wrap">
                     <span class="fav-card-rating">${rating}</span>
+                    <div class="fav-rating-active"></div>
                     <svg aria-label="star" class="fav-card-star icon" viewBox="0 0 32 32">
                     ${patchStar}
                     </svg>
