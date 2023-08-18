@@ -47,7 +47,9 @@ export function markupCardFavorites(dishArr) {
     )
     .join('');
   dishListEl.insertAdjacentHTML('beforeend', markup);
+
   localStorageSet(dishArr);
+
   const heartBtnEl = document.querySelector('.fav-card-heart-btn');
   heartBtnEl.addEventListener('click', onDelCardFav);
   function onDelCardFav(e) {
