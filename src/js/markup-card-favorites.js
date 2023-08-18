@@ -16,7 +16,7 @@ export function markupCardFavorites(dishArr) {
             <img class="fav-card-img" src="${thumb}" alt="${title}">
             <h3 class="fav-card-title">${title}</h3>
             <p class="fav-card-desc">${description}</p>
-            <div сlass="fav-card-info-wrap">
+            <div class="fav-card-info-wrap">
                 <div class="fav-rating-wrap">
                     <span class="fav-card-rating">${rating}</span>
                     <div class="fav-rating-active"></div>
