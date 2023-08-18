@@ -37,3 +37,4 @@ const fetchDishes = async () => {
   }
 };
 fetchDishes();
+
