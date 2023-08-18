@@ -4,37 +4,37 @@ export function markupCardFavorites(dishArr) {
     console.log(dishArr);
   const markup = dishArr
     .map(
-      ({ _id, preview, title, description, rating }) =>
-        `<li>
-            <button>
-                <svg aria-label="heart" class="icon-heart icon">
+      ({ _id, preview, thumb, title, description, rating }) =>
+        `<li class="fav-card item">
+            <button class="fav-card-heart-btn">
+                <svg aria-label="heart" class="fav-card-heart icon">
                     <use href="./img/icons.svg#icon-heart"></use>
                 </svg>
             </button>
-            <img src="${preview}" alt="${title}">
-            <div>
-                <p>${title}</p>
-                <p>${description}</p>
+            <img class="fav-card-img" src="${thumb}" alt="${title}">
+            <div сlass-"fav-card-info">
+                <p class="fav-card-title">${title}</p>
+                <p class="fav-card-desc">${description}</p>
                 <div>
                     <div>
-                        <span>${rating}</span>
-                        <svg aria-label="star" class="icon-star icon" width=18 height=18>
+                        <span class="fav-card-rating">${rating}</span>
+                        <svg aria-label="star" class="fav-card-star icon">
                             <use href="./img/icons.svg#icon-star"></use>
                         </svg>
-                        <svg aria-label="star" class="icon-star icon">
+                        <svg aria-label="star" class="fav-card-star icon">
                             <use href="./img/icons.svg#icon-star"></use>
                         </svg>
-                        <svg aria-label="star" class="icon-star icon">
+                        <svg aria-label="star" class="fav-card-star icon">
                             <use href="./img/icons.svg#icon-star"></use>
                         </svg>
-                        <svg aria-label="star" class="icon-star icon">
+                        <svg aria-label="star" class="fav-card-star icon">
                             <use href="./img/icons.svg#icon-star"></use>
                         </svg>
-                        <svg aria-label="star" class="icon-star icon">
+                        <svg aria-label="star" class="fav-card-star icon">
                             <use href="./img/icons.svg#icon-star"></use>
                         </svg>
                     </div>
-                    <button></button>
+                    <button class="fav-card-see-btn">See recipe</button>
                 </div>
             </div>
         </li>`
