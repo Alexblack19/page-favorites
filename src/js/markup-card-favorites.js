@@ -21,29 +21,23 @@ export function markupCardFavorites() {
             <p class="fav-card-desc">${description}</p>
             <div class="fav-card-info-wrap">
                 <div class="fav-rating-wrap">
-                    <span class="fav-card-rating">${rating}</span>     
-
-                    <div class="rating" data-total-value="3">
-
-                    <svg aria-label="star" class="fav-card-star icon" data-item-value="5" viewBox="0 0 32 32">
+                    <span class="fav-card-rating">${rating}</span>
+                    <svg aria-label="star" class="fav-card-star icon" viewBox="0 0 32 32">
                     ${patchStar}
                     </svg>
-                    <svg aria-label="star" class="fav-card-star icon" data-item-value="4" viewBox="0 0 32 32">
+                    <svg aria-label="star" class="fav-card-star icon" viewBox="0 0 32 32">
                     ${patchStar}
                     </svg>
-                    <svg aria-label="star" class="fav-card-star icon" data-item-value="3" viewBox="0 0 32 32">
+                    <svg aria-label="star" class="fav-card-star icon" viewBox="0 0 32 32">
                     ${patchStar}
                     </svg>
-                    <svg aria-label="star" class="fav-card-star icon" data-item-value="2" viewBox="0 0 32 32">
+                    <svg aria-label="star" class="fav-card-star icon" viewBox="0 0 32 32">
                     ${patchStar}
                     </svg>
-                    <svg aria-label="star" class="fav-card-star icon" data-item-value="1" viewBox="0 0 32 32">
+                    <svg aria-label="star" class="fav-card-star icon" viewBox="0 0 32 32">
                     ${patchStar}
                     </svg>
-
                     </div>
-
-
                 </div>
                 <button class="fav-card-see-btn">See recipe</button>
             </div>
@@ -71,8 +65,8 @@ function onHeartClick(e) {
     if (itemId === obj._id) {
       arr.splice(idx, 1);
       liElement.remove();
-      localStorage.removeItem('dishArr');
-      localStorage.setItem('dishArr', JSON.stringify(arr));
+      localStorage.removeItem('dishLocalKey');
+      localStorage.setItem('dishLocalKey', JSON.stringify(arr));
     }
   });
   console.log('Клік по кнопці heart:', itemId);
@@ -83,3 +77,8 @@ function onHeartClick(e) {
 //   const itemId = liElement.getAttribute('id');
 //   console.log('Клік по кнопці See recipe:', itemId);
 // }
+
+// Рендерінг сторінки після перезавантаження //
+window.addEventListener('pageshow', function (e) {
+  markupCardFavorites();
+});

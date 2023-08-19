@@ -1,11 +1,17 @@
-import {markupCardFavorites} from './markup-card-favorites.js'
+import { markupCardFavorites } from './markup-card-favorites.js';
 
-export function localStorageSet(dishArr) {
-  localStorage.setItem('dishArr', JSON.stringify(dishArr));
+export function localStorageSet(dishArrBack) {
+  const arrLocStorAdd = localStorageGet();
+  console.log(arrLocStorAdd);
+  dishArrBack.forEach(element => {
+    arrLocStorAdd.push(element);
+    
+  });
+  localStorage.setItem('dishLocalKey', JSON.stringify(arrLocStorAdd));
   markupCardFavorites();
 }
 
 export function localStorageGet() {
-  const dishArrLocalStorage = JSON.parse(localStorage.getItem('dishArr'));
-  return dishArrLocalStorage;
+  const dishArrLocStorGet = JSON.parse(localStorage.getItem('dishLocalKey'));
+  return dishArrLocStorGet;
 }
