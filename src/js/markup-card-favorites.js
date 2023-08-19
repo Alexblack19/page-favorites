@@ -78,5 +78,8 @@ function onSeeRecipeClick(e) {
 
 // Рендерінг сторінки після перезавантаження //
 window.addEventListener('pageshow', function (e) {
-  markupCardFavorites(localStorageGet());
+  if (localStorageGet() !== []) {
+    markupCardFavorites(localStorageGet());
+  }
+  return;
 });
