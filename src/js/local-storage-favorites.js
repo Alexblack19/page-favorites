@@ -1,17 +1,17 @@
 import { markupCardFavorites } from './markup-card-favorites.js';
 
 export function localStorageSet(dishArrBack) {
-  if (dishArrBack !== [] && dishArrBack !== null) {
+  if (dishArrBack.length) {
     const arrLocStorAdd = localStorageGet();
-    dishArrBack.forEach(element => {
-      arrLocStorAdd.push(element);
+    dishArrBack.forEach(obj => {
+      arrLocStorAdd.push(obj);
     });
     localStorage.setItem('dishLocalKey', JSON.stringify(arrLocStorAdd));
   } else {
     localStorage.setItem('dishLocalKey', JSON.stringify(dishArrBack));
   }
 
-  if (dishArrBack !== [] && dishArrBack !== null) {
+  if (dishArrBack.length) {
     markupCardFavorites(dishArrBack);
   }
 }

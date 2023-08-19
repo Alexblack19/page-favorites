@@ -62,17 +62,17 @@ function onHeartClick(e) {
   if (arrLocal.length) {
     const liElement = e.currentTarget.closest('.fav-card');
     const itemId = liElement.getAttribute('id');
-    console.log('Клік по кнопці heart:', itemId);
     arrLocal.map((obj, idx, arr) => {
       if (itemId === obj._id) {
-        arr.splice(idx, 1);
+        arrLocal.splice(idx, 1);
         liElement.remove();
         // localStorage.removeItem('dishLocalKey');
-        localStorage.setItem('dishLocalKey', JSON.stringify(arr));
+        localStorage.setItem('dishLocalKey', JSON.stringify(arrLocal));
         return;
       }
     });
   }
+  console.log(itemId);
 }
 
 // function onSeeRecipeClick(e) {
