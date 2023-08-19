@@ -9,7 +9,7 @@ async function fetchDishFavorites(ID) {
   return response.data;
 }
 
-const dishIds = [
+const arr = [
   '6462a8f74c3d0ddd28897fb8',
   '6462a8f74c3d0ddd28897fba',
   '6462a8f74c3d0ddd28897fbb',
@@ -20,6 +20,7 @@ const dishIds = [
   '6462a8f74c3d0ddd28897fde',
   '6462a8f74c3d0ddd28897feb',
 ];
+const inputDataArr = [];
 
 const fetchDishes = async arrID => {
   try {
@@ -36,4 +37,4 @@ const fetchDishes = async arrID => {
     console.log(error.message);
   }
 };
-fetchDishes(dishIds);
+fetchDishes(inputDataArr);
