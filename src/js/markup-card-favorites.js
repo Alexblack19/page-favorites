@@ -59,6 +59,7 @@ export function markupCardFavorites(dishArr) {
 
 function onHeartClick(e) {
   const arrLocal = localStorageGet();
+  console.log(arrLocal);
   if (arrLocal.length) {
     const liElement = e.currentTarget.closest('.fav-card');
     const itemId = liElement.getAttribute('id');
@@ -68,11 +69,10 @@ function onHeartClick(e) {
         liElement.remove();
         // localStorage.removeItem('dishLocalKey');
         localStorage.setItem('dishLocalKey', JSON.stringify(arrLocal));
-        return;
       }
+      return;
     });
   }
-  console.log(itemId);
 }
 
 // function onSeeRecipeClick(e) {
