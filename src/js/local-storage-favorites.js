@@ -11,7 +11,7 @@ export function localStorageSet(dishArrBack) {
     localStorage.setItem('dishLocalKey', JSON.stringify(dishArrBack));
   }
 
-  if (dishArrBack !== []) {
+  if (dishArrBack !== [] && dishArrBack !== null) {
     markupCardFavorites(dishArrBack);
   }
 }
