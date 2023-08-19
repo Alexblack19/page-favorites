@@ -28,8 +28,11 @@ function onClickBtn(e) {
   console.log(e);
   const inputDataArr = [];
   const i = Math.floor(Math.random() * arr.length);
-  inputDataArr.push(arr[i]);  
-  fetchDishes(inputDataArr);
+  inputDataArr.push(arr[i]);
+  if (inputDataArr !== []) {
+    fetchDishes(inputDataArr);
+  }
+  return;
 }
 addBtn.addEventListener('click', onClickBtn);
 //todo=============================================
@@ -49,4 +52,3 @@ const fetchDishes = async arrID => {
     console.log(error.message);
   }
 };
-

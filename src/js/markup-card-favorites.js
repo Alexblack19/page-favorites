@@ -56,18 +56,21 @@ export function markupCardFavorites(dishArr) {
 }
 
 function onHeartClick(e) {
-  const liElement = e.currentTarget.closest('.fav-card');
-  const itemId = liElement.getAttribute('id');
   const arrLocal = localStorageGet();
-  arrLocal.forEach((obj, idx, arr) => {
-    if (itemId === obj._id) {
-      arr.splice(idx, 1);
-      liElement.remove();
-      localStorage.removeItem('dishLocalKey');
-      localStorage.setItem('dishLocalKey', JSON.stringify(arr));
-    }
-  });
-  console.log('Клік по кнопці heart:', itemId);
+  if (arrLocal !== []) {
+    const liElement = e.currentTarget.closest('.fav-card');
+    const itemId = liElement.getAttribute('id');
+    console.log('Клік по кнопці heart:', itemId);
+    arrLocal.forEach((obj, idx, arr) => {
+      if (itemId === obj._id) {
+        arr.splice(idx, 1);
+        liElement.remove();
+        localStorage.removeItem('dishLocalKey');
+        localStorage.setItem('dishLocalKey', JSON.stringify(arr));
+      }
+    });
+  }
+  return;
 }
 
 function onSeeRecipeClick(e) {
