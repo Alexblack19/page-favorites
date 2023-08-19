@@ -29,7 +29,7 @@ function onClickBtn(e) {
   const inputDataArr = [];
   const i = Math.floor(Math.random() * arr.length);
   inputDataArr.push(arr[i]);
-  if (inputDataArr !== [] && inputDataArr !== null) {    
+  if (inputDataArr.length) {
     fetchDishes(inputDataArr);
   }
   return;
@@ -46,10 +46,9 @@ async function fetchDishes(arrID) {
     });
     // 2. Запускаємо усі проміси паралельно і чекаємо на їх завершення
     const dishArr = await Promise.all(arrayOfPromises);
-    console.log(dishArr);
     localStorageSet(dishArr);
     return dishArr;
   } catch (error) {
     console.log(error.message);
   }
-};
+}
