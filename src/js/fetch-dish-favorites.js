@@ -37,7 +37,7 @@ function onClickBtn(e) {
 addBtn.addEventListener('click', onClickBtn);
 //todo=============================================
 //=================================================
-const fetchDishes = async arrID => {
+async function fetchDishes(arrID) {
   try {
     // 1. Створюємо масив промісів
     const arrayOfPromises = arrID.map(async dishId => {
