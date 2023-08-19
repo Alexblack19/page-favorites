@@ -7,6 +7,8 @@ export function localStorageSet(dishArrBack) {
       arrLocStorAdd.push(element);
     });
     localStorage.setItem('dishLocalKey', JSON.stringify(arrLocStorAdd));
+  } else {
+    localStorage.setItem('dishLocalKey', JSON.stringify(dishArrBack));
   }
 
   if (dishArrBack !== []) {
