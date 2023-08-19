@@ -8,6 +8,9 @@ async function fetchDishFavorites(ID) {
   const response = await axios.get(`${BASE_URL}/recipes/${ID}`);
   return response.data;
 }
+//==================================
+const addBtn = document.querySelector('.add-btn')
+addBtn.addEventListener('click', onClickBtn)
 
 const arr = [
   '6462a8f74c3d0ddd28897fb8',
@@ -21,7 +24,12 @@ const arr = [
   '6462a8f74c3d0ddd28897feb',
 ];
 const inputDataArr = [];
+function onClickBtn() {
+  const i = Math.floor(Math.random() * arr.length);
+  inputDataArr.push(arr[i]);  
+}
 
+//====================================
 const fetchDishes = async arrID => {
   try {
     // 1. Створюємо масив промісів
