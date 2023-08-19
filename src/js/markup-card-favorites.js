@@ -1,5 +1,4 @@
 import { localStorageGet } from './local-storage-favorites.js';
-import { localStorageSet } from './local-storage-favorites.js';
 
 const dishListEl = document.querySelector('.favorites-cards');
 
