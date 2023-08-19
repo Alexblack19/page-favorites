@@ -27,9 +27,9 @@ const arr = [
 function onClickBtn(e) {
   console.log(e);
   const inputDataArr = [];
-  const i = Math.floor(Math.random() * arr.length);  
-  inputDataArr.push(arr[i]);
-  if (inputDataArr.length) {
+  const i = Math.floor(Math.random() * arr.length);    
+  if (inputDataArr !== null) {
+    inputDataArr.push(arr[i]);
     fetchDishes(inputDataArr);
   }
   return;
