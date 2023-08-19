@@ -7,7 +7,10 @@ export function localStorageSet(dishArrBack) {
   });
   localStorage.setItem('dishLocalKey', JSON.stringify(arrLocStorAdd));
   console.log(arrLocStorAdd);
-  markupCardFavorites(dishArrBack);
+  if (dishArrBack !== []) {
+    markupCardFavorites(dishArrBack);
+  }
+  return;
 }
 
 export function localStorageGet() {
