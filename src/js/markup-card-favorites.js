@@ -54,29 +54,32 @@ export function markupCardFavorites() {
 
   const favCardHeartBtns = document.querySelectorAll('.fav-card-heart-btn');
   favCardHeartBtns.forEach(button => {
-    button.addEventListener('click', function (event) {
-      const liElement = event.currentTarget.closest('.fav-card');
-      const itemId = liElement.getAttribute('id');
-
-      const arrLocal = localStorageGet();
-
-      arrLocal.forEach((obj, idx, arr) => {
-        if (itemId === obj._id) {
-          arr.splice(idx, 1);
-          localStorage.removeItem('dishArr');
-          localStorageSet(arrLocal);
-        }
-      });
-      console.log('Клик на кнопку heart:', itemId);
-    });
+    button.addEventListener('click', onHeartClick);
   });
 
   // const favCardStarBtns = document.querySelectorAll('.fav-card-see-btn');
   // favCardStarBtns.forEach(button => {
-  //   button.addEventListener('click', function (event) {
-  //     const liElement = event.currentTarget.closest('.fav-card');
-  //     const itemId = liElement.getAttribute('id');
-  //     console.log('Клик на кнопку See:', itemId);
-  //   });
+  //   button.addEventListener('click', onSeeRecipeClick);
   // });
 }
+
+function onHeartClick(e) {
+  const liElement = e.currentTarget.closest('.fav-card');
+  const itemId = liElement.getAttribute('id');
+  const arrLocal = localStorageGet();
+  arrLocal.forEach((obj, idx, arr) => {
+    if (itemId === obj._id) {
+      arr.splice(idx, 1);
+      liElement.remove();
+      localStorage.removeItem('dishArr');
+      localStorage.setItem('dishArr', JSON.stringify(arr));
+    }
+  });
+  console.log('Клік по кнопці heart:', itemId);
+}
+
+// function onSeeRecipeClick(e) {
+//   const liElement = e.currentTarget.closest('.fav-card');
+//   const itemId = liElement.getAttribute('id');
+//   console.log('Клік по кнопці See recipe:', itemId);
+// }
