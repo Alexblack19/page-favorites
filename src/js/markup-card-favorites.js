@@ -78,6 +78,6 @@ function onSeeRecipeClick(e) {
 }
 
 // Рендерінг сторінки після перезавантаження //
-window.addEventListener('pageshow', function (e) {
+window.addEventListener('pageshow', function () {
   markupCardFavorites(localStorageGet());
 });
