@@ -83,7 +83,7 @@ function onHeartClick(e) {
 
 // Рендерінг сторінки після перезавантаження //
 window.addEventListener('pageshow', function (e) {
-  if (localStorageGet() !== []) {
+  if (localStorageGet() !== null) {
     markupCardFavorites(localStorageGet());
   }
   return;
