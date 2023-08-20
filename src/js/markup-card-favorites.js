@@ -49,29 +49,30 @@ export function markupCardFavorites(dishArr) {
     const ratingDish = document.querySelectorAll('.fav-card-rating');
     console.log(ratingDish);    
     ratingDish.forEach(rating => {
-      console.dir(rating.textContent);
+      console.dir(rating.nextElementSibling);
+      
       const starsCard = Math.round(Number(rating.textContent));
       
       switch (starsCard) {
         case 1:
           console.log(1);
-          rating.classList('.rating-one')
+          rating.nextElementSibling.classList.add("star-1")
           break;
         case 2:
           console.log(2);
-          rating.classList('.rating2')
+          rating.nextElementSibling.classList.add("star-2")
           break;
         case 3:
           console.log(3);
-          rating.classList('.rating3')
+          rating.nextElementSibling.classList.add("star-3")
           break;
         case 4:
           console.log(4);
-          rating.classList('.rating4')
+          rating.nextElementSibling.classList.add("star-4")
           break;
         case 5:
           console.log(5);
-          rating.classList('.rating5')
+          rating.nextElementSibling.classList.add("star-5")
           break;
       }
     });

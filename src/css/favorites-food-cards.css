@@ -128,12 +128,7 @@
   fill: #f8f8f8;
   opacity: 0.1;
 }
-/*=======================*/
-.fav-card-star:hover {
-  fill: #eea10c;
-  opacity: 1;
-}
-/*=======================*/
+
 .fav-card-see-btn {
   width: 89px;
   height: 31px;
@@ -148,3 +143,7 @@
   background-color: #9bb537;
 }
 
+.star-4 .fav-card-star:nth-child(-n + 4) {
+  fill: #eea10c;
+  opacity: 1;
+}
