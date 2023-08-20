@@ -2,31 +2,39 @@ import { markupCardFavorites } from './markup-card-favorites.js';
 
 export function localStorageSet(dishArrBack) {
   let arrLocStorAdd;
-  let dishArrMarkup = dishArrBack;
-  
+  let dishArrMarkup = [];
+
   if (localStorageGet() === null) {
     arrLocStorAdd = [];
   } else {
     arrLocStorAdd = localStorageGet();
   }
 
-  for (const obj of dishArrBack) {
-    if (arrLocStorAdd.includes(obj)) {
-      const idxObj = dishArrMarkup.indexOf(obj);
-      dishArrMarkup.splice(idxObj, 1);      
-    } else {
-      arrLocStorAdd.push(obj);
+  for (const objBack of dishArrBack) {
+    console.log(objBack);
+    const idxObjBack = objBack._id;
+    if ((arrLocStorAdd = [])) {
+      arrLocStorAdd.push(objBack);
+    }
+    
+    // arrLocStorAdd.forEach(objArr => {
+    //   console.log(objArr);
+    // });
+
+    for (const objArr of arrLocStorAdd) {
+      console.log('Hello');
+      const idxObjArr = objArr._id;
+      if (idxObjBack !== idxObjArr) {
+        arrLocStorAdd.push(objBack);
+        dishArrMarkup.push(objBack);
+      }
     }
   }
-  console.log('kjfjgh',dishArrMarkup);
 
+  markupCardFavorites(dishArrBack);
 
-  console.log(dishArrBack);
-  markupCardFavorites(dishArrMarkup);
   localStorage.setItem('dishLocalKey', JSON.stringify(arrLocStorAdd));
 }
-
-//Масив об'єктів модуль 3 заняття 5
 
 export function localStorageGet() {
   const dishArrLocStorGet = JSON.parse(localStorage.getItem('dishLocalKey'));
