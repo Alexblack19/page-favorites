@@ -84,9 +84,9 @@ ul {
 
 .fav-card {
   position: relative;
-  padding: 214px 16px 16px;
-  max-width: 335px;
-  min-height: 335px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 16px;
   border-radius: 8px;
   overflow: hidden;
   background-image: linear-gradient(
@@ -96,11 +96,18 @@ ul {
   );
 }
 
+@media screen and (max-width: 768px) {
+  .fav-card {
+    padding-top: 214px;
+    max-width: 335px;
+    min-height: 335px;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .fav-card {
     padding-top: 123px;
-    height: 244px;
-    /* width: 224px; */
+    min-height: 244px;
     flex-basis: calc((100% - 32px) / 3);
   }
 }
@@ -108,9 +115,8 @@ ul {
 @media screen and (min-width: 1280px) {
   .fav-card {
     padding-top: 166px;
-    height: 287px;
-    width: 257px;
-    /* flex-basis: calc((100% - 48px) / 4); */
+    min-height: 287px;
+    flex-basis: calc((100% - 48px) / 4);
   }
 }
 
@@ -145,7 +151,9 @@ ul {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-size: cover;
+  /* background-size: cover; */
+  height: 100%;
+  width: auto;
 }
 
 .fav-card-title {
@@ -155,6 +163,11 @@ ul {
   font-weight: 600;
   line-height: calc(18 / 14);
   text-transform: uppercase;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
   color: #f8f8f8;
 }
 
@@ -165,11 +178,11 @@ ul {
   font-size: 12px;
   line-height: calc(16 / 12);
   overflow: hidden;
-  color: #f8f8f8;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+  color: #f8f8f8;
 }
 
 .fav-card-info-wrap {
@@ -198,6 +211,17 @@ ul {
   }
 }
 
+@media screen and (min-width: 1280px) {
+  .fav-rating-wrap {
+    column-gap: 4px;
+  }
+}
+
+.fav-stars-wrap {
+  display: flex;
+  column-gap: 2px;
+}
+
 .fav-card-star {
   width: 18px;
   height: 18px;
@@ -207,15 +231,15 @@ ul {
 
 @media screen and (min-width: 768px) {
   .fav-card-star {
-    width: 14px;
-    height: 14px;
+    width: 12px;
+    height: 12px;
   }
 }
 
 @media screen and (min-width: 1280px) {
   .fav-card-star {
-    width: 18px;
-    height: 18px;
+    width: 17px;
+    height: 17px;
   }
 }
 
@@ -236,7 +260,7 @@ ul {
 
 @media screen and (min-width: 1280px) {
   .fav-card-see-btn {
-    max-width: 93px;    
+    max-width: 93px;
   }
 }
 
