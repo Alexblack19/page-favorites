@@ -24,14 +24,11 @@ const arr = [
   '6462a8f74c3d0ddd28897feb',
 ];
 
-function onClickBtn() {  
+function onClickBtn() {
   const inputDataArr = [];
-  const i = Math.floor(Math.random() * arr.length);
-  if (inputDataArr !== null) {
-    inputDataArr.push(arr[i]);
-    fetchDishes(inputDataArr);
-  }
-  return;
+  const i = Math.floor(Math.random() * arr.length);  
+  inputDataArr.push(arr[i]);
+  fetchDishes(inputDataArr);
 }
 addBtn.addEventListener('click', onClickBtn);
 //todo=============================================
