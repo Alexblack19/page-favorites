@@ -1,6 +1,6 @@
 import { markupCardFavorites } from './markup-card-favorites.js';
 
-export function localStorageSet(dishArrBack) {
+export function localStorageSet(dishArrBack) { 
   let arrLocStorAdd;
   let dishArrMarkup = [];
 
@@ -11,27 +11,25 @@ export function localStorageSet(dishArrBack) {
   }
 
   for (const objBack of dishArrBack) {
-    console.log(objBack);
-    const idxObjBack = objBack._id;
-    if ((arrLocStorAdd = [])) {
-      arrLocStorAdd.push(objBack);
-    }
-    
-    // arrLocStorAdd.forEach(objArr => {
-    //   console.log(objArr);
-    // });
 
-    for (const objArr of arrLocStorAdd) {
-      console.log('Hello');
-      const idxObjArr = objArr._id;
-      if (idxObjBack !== idxObjArr) {
-        arrLocStorAdd.push(objBack);
-        dishArrMarkup.push(objBack);
-      }
-    }
+    arrLocStorAdd.push(objBack);
+    dishArrMarkup.push(objBack);
+
+    // const idxObjBack = objBack._id;
+    // console.log(idxObjBack);
+    // if ((arrLocStorAdd = [])) {
+    //   arrLocStorAdd.push(objBack);
+    // }
+    // for (const objArr of arrLocStorAdd) {
+    //   const idxObjArr = objArr._id;
+    //   if (idxObjBack !== idxObjArr) {
+    //     arrLocStorAdd.push(objBack);
+    //     dishArrMarkup.push(objBack);
+    //   }
+    // }
   }
-
-  markupCardFavorites(dishArrBack);
+  
+  markupCardFavorites(dishArrMarkup);
 
   localStorage.setItem('dishLocalKey', JSON.stringify(arrLocStorAdd));
 }

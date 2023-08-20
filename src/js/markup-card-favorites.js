@@ -58,16 +58,14 @@ export function markupCardFavorites(dishArr) {
 }
 
 function onHeartClick(e) {
-  const arrLocal = localStorageGet();
-  console.log(arrLocal);
+  const arrLocal = localStorageGet();  
   if (arrLocal.length) {
     const liElement = e.currentTarget.closest('.fav-card');
     const itemId = liElement.getAttribute('id');
     arrLocal.map((obj, idx, arr) => {
       if (itemId === obj._id) {
         arrLocal.splice(idx, 1);
-        liElement.remove();
-        // localStorage.removeItem('dishLocalKey');
+        liElement.remove();        
         localStorage.setItem('dishLocalKey', JSON.stringify(arrLocal));
       }
       return;
