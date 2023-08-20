@@ -1,17 +1,6 @@
-// Підключення бібліотеки
-import axios from 'axios';
-//========================
-import { localStorageSet } from './local-storage-favorites.js';
-
-const BASE_URL = 'https://tasty-treats-backend.p.goit.global/api';
-async function fetchDishFavorites(ID) {
-  const response = await axios.get(`${BASE_URL}/recipes/${ID}`);
-  return response.data;
-}
 //=================================================
 //todo=============================================
 const addBtn = document.querySelector('.add-btn');
-
 const arr = [
   '6462a8f74c3d0ddd28897fb8',
   '6462a8f74c3d0ddd28897fba',
@@ -42,6 +31,18 @@ function onClickBtn() {
 addBtn.addEventListener('click', onClickBtn);
 //todo=============================================
 //=================================================
+//========================
+// Підключення бібліотеки
+import axios from 'axios';
+//========================
+import { localStorageSet } from './local-storage-favorites.js';
+
+const BASE_URL = 'https://tasty-treats-backend.p.goit.global/api';
+async function fetchDishFavorites(ID) {
+  const response = await axios.get(`${BASE_URL}/recipes/${ID}`);
+  return response.data;
+}
+
 async function fetchDishes(arrID) {
   try {
     // 1. Створюємо масив промісів
