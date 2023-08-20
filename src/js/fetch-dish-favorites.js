@@ -22,15 +22,12 @@ const arr = [
   '6462a8f74c3d0ddd28897fbf',
   '6462a8f74c3d0ddd28897fde',
   '6462a8f74c3d0ddd28897feb',
-  '6462a8f74c3d0ddd28897fb8',
-  '6462a8f74c3d0ddd28897fba',
-  '6462a8f74c3d0ddd28897fbb',
-  '6462a8f74c3d0ddd28897fb9',
-  '6462a8f74c3d0ddd28897fdf',
-  '6462a8f74c3d0ddd28897fc2',
-  '6462a8f74c3d0ddd28897fbf',
-  '6462a8f74c3d0ddd28897fde',
-  '6462a8f74c3d0ddd28897feb',
+  '6462a8f74c3d0ddd28897fe6',
+  '6462a8f74c3d0ddd28897ff0',
+  '6462a8f74c3d0ddd28897fe3',
+  '6462a8f74c3d0ddd28897fe7',
+  '6462a8f74c3d0ddd28897fe9',
+  '6462a8f74c3d0ddd28897fd3',
 ];
 
 let i = 0;
