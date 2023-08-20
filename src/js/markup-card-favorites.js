@@ -21,21 +21,23 @@ export function markupCardFavorites(dishArr) {
                                   <div class="fav-card-info-wrap">
                                       <div class="fav-rating-wrap">
                                           <span class="fav-card-rating">${rating}</span>
-                                          <svg aria-label="star" class="fav-card-star icon" viewBox="0 0 32 32">
-                                          ${patchStar}
-                                          </svg>
-                                          <svg aria-label="star" class="fav-card-star icon" viewBox="0 0 32 32">
-                                          ${patchStar}
-                                          </svg>
-                                          <svg aria-label="star" class="fav-card-star icon" viewBox="0 0 32 32">
-                                          ${patchStar}
-                                          </svg>
-                                          <svg aria-label="star" class="fav-card-star icon" viewBox="0 0 32 32">
-                                          ${patchStar}
-                                          </svg>
-                                          <svg aria-label="star" class="fav-card-star icon" viewBox="0 0 32 32">
-                                          ${patchStar}
-                                          </svg>
+                                          <div class="fav-stars-wrap">
+                                            <svg aria-label="star" class="fav-card-star icon" viewBox="0 0 32 32">
+                                            ${patchStar}
+                                            </svg>
+                                            <svg aria-label="star" class="fav-card-star icon" viewBox="0 0 32 32">
+                                            ${patchStar}
+                                            </svg>
+                                            <svg aria-label="star" class="fav-card-star icon" viewBox="0 0 32 32">
+                                            ${patchStar}
+                                            </svg>
+                                            <svg aria-label="star" class="fav-card-star icon" viewBox="0 0 32 32">
+                                            ${patchStar}
+                                            </svg>
+                                            <svg aria-label="star" class="fav-card-star icon" viewBox="0 0 32 32">
+                                            ${patchStar}
+                                            </svg>
+                                          </div>                                          
                                       </div>
                                       <button class="fav-card-see-btn">See recipe</button>
                                   </div>            
@@ -44,28 +46,52 @@ export function markupCardFavorites(dishArr) {
       .join('');
     dishListEl.insertAdjacentHTML('beforeend', markup);
 
+    const ratingDish = document.querySelectorAll('.fav-card-rating');
+    ratingDish.forEach(rating => {
+      console.dir(rating.textContent);
+      const starsCard = Math.round(Number(rating.textContent));
+
+      switch (starsCard) {
+        case 1:
+          console.log(1);
+          break;
+        case 2:
+          console.log(2);
+          break;
+        case 3:
+          console.log(3);
+          break;
+        case 4:
+          console.log(4);
+          break;
+        case 5:
+          console.log(5);
+          break;
+      }
+    });
+
     const favCardHeartBtns = document.querySelectorAll('.fav-card-heart-btn');
     favCardHeartBtns.forEach(button => {
       button.addEventListener('click', onHeartClick);
     });
 
-    // const favCardStarBtns = document.querySelectorAll('.fav-card-see-btn');
-    // favCardStarBtns.forEach(button => {
-    //   button.addEventListener('click', onSeeRecipeClick);
-    // });
+    const favCardStarBtns = document.querySelectorAll('.fav-card-see-btn');
+    favCardStarBtns.forEach(button => {
+      button.addEventListener('click', onSeeRecipeClick);
+    });
   }
   return;
 }
 
 function onHeartClick(e) {
-  const arrLocal = localStorageGet();  
+  const arrLocal = localStorageGet();
   if (arrLocal.length) {
     const liElement = e.currentTarget.closest('.fav-card');
     const itemId = liElement.getAttribute('id');
     arrLocal.map((obj, idx) => {
       if (itemId === obj._id) {
         arrLocal.splice(idx, 1);
-        liElement.remove();        
+        liElement.remove();
         localStorage.setItem('dishLocalKey', JSON.stringify(arrLocal));
       }
       return;
@@ -73,14 +99,14 @@ function onHeartClick(e) {
   }
 }
 
-// function onSeeRecipeClick(e) {
-//   const liElement = e.currentTarget.closest('.fav-card');
-//   const itemId = liElement.getAttribute('id');
-//   console.log('Клік по кнопці See recipe:', itemId);
-// }
+function onSeeRecipeClick(e) {
+  const liElement = e.currentTarget.closest('.fav-card');
+  const itemId = liElement.getAttribute('id');
+  console.log('Клік по кнопці See recipe:', itemId);
+}
 
 // Рендерінг сторінки після перезавантаження //
-window.addEventListener('pageshow', function () {  
+window.addEventListener('pageshow', function () {
   if (localStorageGet() === null) {
     return;
   }
