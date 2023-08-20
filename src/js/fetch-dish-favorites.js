@@ -25,11 +25,13 @@ const arr = [
 ];
 
 let i = 0;
-function onClickBtn() {  
-  const inputDataArr = [];
-  inputDataArr.push(arr[i]);
-  fetchDishes(inputDataArr);
-  i += 1;
+function onClickBtn() {
+  if (i < arr.length) {
+    const inputDataArr = [];
+    inputDataArr.push(arr[i]);
+    fetchDishes(inputDataArr);
+    i += 1;
+  }
 }
 addBtn.addEventListener('click', onClickBtn);
 //todo=============================================

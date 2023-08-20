@@ -62,7 +62,7 @@ function onHeartClick(e) {
   if (arrLocal.length) {
     const liElement = e.currentTarget.closest('.fav-card');
     const itemId = liElement.getAttribute('id');
-    arrLocal.map((obj, idx, arr) => {
+    arrLocal.map((obj, idx) => {
       if (itemId === obj._id) {
         arrLocal.splice(idx, 1);
         liElement.remove();        
