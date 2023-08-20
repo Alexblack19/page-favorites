@@ -82,9 +82,9 @@ function onHeartClick(e) {
 // }
 
 // Рендерінг сторінки після перезавантаження //
-window.addEventListener('pageshow', function (e) {
-  if (localStorageGet() !== null) {
-    markupCardFavorites(localStorageGet());
+window.addEventListener('pageshow', function () {  
+  if (localStorageGet() === null) {
+    return;
   }
-  return;
+  markupCardFavorites(localStorageGet());
 });

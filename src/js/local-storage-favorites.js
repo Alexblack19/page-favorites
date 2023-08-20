@@ -1,7 +1,11 @@
 import { markupCardFavorites } from './markup-card-favorites.js';
 
 export function localStorageSet(dishArrBack) {
-  const arrLocStorAdd = localStorageGet();
+  let arrLocStorAdd;
+  if(localStorageGet() === null){
+    arrLocStorAdd = [];
+  } else {arrLocStorAdd = localStorageGet();}  
+  
   if (!dishArrBack.length) {
     return;
   }
