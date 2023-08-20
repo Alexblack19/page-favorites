@@ -86,6 +86,7 @@ ul {
   position: relative;
   padding: 214px 16px 16px;
   max-width: 335px;
+  min-height: 335px;
   border-radius: 8px;
   overflow: hidden;
   background-image: linear-gradient(
@@ -136,19 +137,14 @@ ul {
   fill: #f8f8f8;
 }
 
-/* ===========В работе=========== */
-
 .fav-card-img {
-  /* display: block; */
   z-index: -10;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-size: auto;
+  background-size: cover;
 }
-
-/* ===========В работе=========== */
 
 .fav-card-title {
   margin-bottom: 8px;
@@ -195,18 +191,10 @@ ul {
 }
 
 @media screen and (min-width: 768px) {
-  .fav-rating-wrap {    
+  .fav-rating-wrap {
     column-gap: 2px;
   }
 }
-
-
-
-
-
-
-
-
 
 .fav-card-star {
   width: 18px;
@@ -222,14 +210,12 @@ ul {
   }
 }
 
-
-@media screen and (min-width: 1280px){
+@media screen and (min-width: 1280px) {
   .fav-card-star {
     width: 18px;
     height: 18px;
   }
 }
-
 
 .fav-card-see-btn {
   max-width: 89px;
@@ -244,6 +230,12 @@ ul {
   border-radius: 8px;
   cursor: pointer;
   background-color: #9bb537;
+}
+
+@media screen and (min-width: 1280px) {
+  .fav-card-see-btn {
+    max-width: 93px;    
+  }
 }
 
 .star-one .fav-card-star:nth-child(-n + 1),
