@@ -99,7 +99,8 @@ ul {
 @media screen and (min-width: 768px) {
   .fav-card {
     padding-top: 123px;
-    min-height: 244px;
+    height: 244px;
+    /* width: 224px; */
     flex-basis: calc((100% - 32px) / 3);
   }
 }
@@ -107,8 +108,9 @@ ul {
 @media screen and (min-width: 1280px) {
   .fav-card {
     padding-top: 166px;
-    min-height: 287px;
-    flex-basis: calc((100% - 48px) / 4);
+    height: 287px;
+    width: 257px;
+    /* flex-basis: calc((100% - 48px) / 4); */
   }
 }
 
@@ -205,8 +207,8 @@ ul {
 
 @media screen and (min-width: 768px) {
   .fav-card-star {
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
   }
 }
 
