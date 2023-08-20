@@ -149,6 +149,19 @@ ul {
 }
 
 /* ===========В работе=========== */
+
+.fav-card-title {
+  margin-bottom: 8px;
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: calc(18 / 14);
+  text-transform: uppercase;
+  color: #f8f8f8;
+}
+
+/* ===========В работе=========== */
+
 .fav-card-desc {
   margin-bottom: 16px;
   height: 32px;
@@ -163,15 +176,10 @@ ul {
   -webkit-box-orient: vertical;
 }
 
-.fav-card-title {
-  margin-bottom: 8px;
-  font-family: Inter;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: calc(18 / 14);
-  text-transform: uppercase;
-  color: #f8f8f8;
-}
+
+
+
+
 
 .fav-card-info-wrap {
   display: flex;
