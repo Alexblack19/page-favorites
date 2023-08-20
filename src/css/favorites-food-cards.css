@@ -47,9 +47,7 @@
 .fav-card-heart {
   width: 22px;
   height: 22px;
-  fill: #f8f8f8;
-  /* stroke: #f8f8f8;
-  stroke-width: 2.5; */
+  fill: #f8f8f8; 
 }
 
 .fav-card {
