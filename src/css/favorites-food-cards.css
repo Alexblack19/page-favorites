@@ -143,7 +143,11 @@
   background-color: #9bb537;
 }
 
-.star-4 .fav-card-star:nth-child(-n + 4) {
+.star-one .fav-card-star:nth-child(-n + 1),
+.star-two .fav-card-star:nth-child(-n + 2),
+.star-three .fav-card-star:nth-child(-n + 3),
+.star-four .fav-card-star:nth-child(-n + 4),
+.star-five .fav-card-star:nth-child(-n + 5) {
   fill: #eea10c;
   opacity: 1;
 }

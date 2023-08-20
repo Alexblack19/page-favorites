@@ -47,32 +47,23 @@ export function markupCardFavorites(dishArr) {
     dishListEl.insertAdjacentHTML('beforeend', markup);
 
     const ratingDish = document.querySelectorAll('.fav-card-rating');
-    console.log(ratingDish);    
     ratingDish.forEach(rating => {
-      console.dir(rating.nextElementSibling);
-      
       const starsCard = Math.round(Number(rating.textContent));
-      
       switch (starsCard) {
         case 1:
-          console.log(1);
-          rating.nextElementSibling.classList.add("star-1")
+          rating.nextElementSibling.classList.add('star-one');
           break;
         case 2:
-          console.log(2);
-          rating.nextElementSibling.classList.add("star-2")
+          rating.nextElementSibling.classList.add('star-two');
           break;
         case 3:
-          console.log(3);
-          rating.nextElementSibling.classList.add("star-3")
+          rating.nextElementSibling.classList.add('star-three');
           break;
         case 4:
-          console.log(4);
-          rating.nextElementSibling.classList.add("star-4")
+          rating.nextElementSibling.classList.add('star-four');
           break;
         case 5:
-          console.log(5);
-          rating.nextElementSibling.classList.add("star-5")
+          rating.nextElementSibling.classList.add('star-five');
           break;
       }
     });
