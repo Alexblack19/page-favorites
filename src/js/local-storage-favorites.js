@@ -2,6 +2,8 @@ import { markupCardFavorites } from './markup-card-favorites.js';
 
 export function localStorageSet(dishArrBack) {
   let arrLocStorAdd;
+  let dishArrMarkup = dishArrBack;
+  
   if (localStorageGet() === null) {
     arrLocStorAdd = [];
   } else {
@@ -10,13 +12,18 @@ export function localStorageSet(dishArrBack) {
 
   for (const obj of dishArrBack) {
     if (arrLocStorAdd.includes(obj)) {
-      return;
+      const idxObj = dishArrMarkup.indexOf(obj);
+      dishArrMarkup.splice(idxObj, 1);      
     } else {
       arrLocStorAdd.push(obj);
-      markupCardFavorites(dishArrBack);
     }
   }
-  localStorage.setItem('dishLocalKey', JSON.stringify(arrLocStorAdd));  
+  console.log('kjfjgh',dishArrMarkup);
+
+
+  console.log(dishArrBack);
+  markupCardFavorites(dishArrMarkup);
+  localStorage.setItem('dishLocalKey', JSON.stringify(arrLocStorAdd));
 }
 
 //Масив об'єктів модуль 3 заняття 5
