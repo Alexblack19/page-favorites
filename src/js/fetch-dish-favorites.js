@@ -19,16 +19,6 @@ const arr = [
   '6462a8f74c3d0ddd28897fd3',
 ];
 
-
-
-
-const inputDataArr = [];
-fetchDishes(inputDataArr);
-
-
-
-
-
 let i = 0;
 function onClickBtn() {
   if (i < arr.length) {
