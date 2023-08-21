@@ -141,7 +141,7 @@ ul {
   width: 22px;
   height: 22px;
   fill: #f8f8f8;
-  transition: stroke 350ms cubic-bezier(0.4, 0, 0.2, 1), stroke-width 350ms cubic-bezier(0.4, 0, 0.2, 1)
+  transition: stroke 350ms cubic-bezier(0.4, 0, 0.2, 1), stroke-width 400ms cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 .fav-card-heart:hover {
@@ -156,7 +156,7 @@ ul {
   }
 
   50% {
-    transform: scale(1.2);
+    transform: scale(1.15);
   }
 
   100% {
@@ -275,7 +275,7 @@ ul {
   border-radius: 8px;
   cursor: pointer;
   background-color: #9bb537;
-  transition: color 350ms cubic-bezier(0.4, 0, 0.2, 1)
+  transition: color 400ms cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 .fav-card-see-btn:hover {
