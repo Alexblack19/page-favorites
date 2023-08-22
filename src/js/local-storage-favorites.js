@@ -16,18 +16,8 @@ export function localStorageSet(dishArrBack) {
     dishArrMarkup.push(objBack);
   }
 
-  // markupCardFavorites(dishArrMarkup);
+  markupCardFavorites(dishArrMarkup);
   localStorage.setItem('dishLocalKey', JSON.stringify(arrLocStorAdd));
-
-
-  oopsMarkup();  
-  if (localStorageGet() === []) {
-    console.log(localStorageGet());
-    oopsMarkup();
-    return;
-  } else {
-    
-  }
 }
 
 export function localStorageGet() {

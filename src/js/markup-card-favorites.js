@@ -1,4 +1,5 @@
 import { localStorageGet } from './local-storage-favorites.js';
+import { oopsMarkup } from './oops-favorites.js';
 
 const dishListEl = document.querySelector('.favorites-cards');
 
@@ -91,8 +92,11 @@ function onHeartClick(e) {
         arrLocal.splice(idx, 1);
         liElement.remove();
         localStorage.setItem('dishLocalKey', JSON.stringify(arrLocal));
+        console.log(localStorageGet());
+        if (localStorageGet() === []) {
+          oopsMarkup();
+        }
       }
-      return;
     });
   }
 }
@@ -107,6 +111,6 @@ function onSeeRecipeClick(e) {
 window.addEventListener('pageshow', function () {
   if (localStorageGet() === null) {
     return;
-  }  
+  }
   markupCardFavorites(localStorageGet());
 });
