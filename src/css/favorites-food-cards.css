@@ -154,7 +154,8 @@ ul {
   width: 22px;
   height: 22px;
   fill: #f8f8f8;
-  transition: stroke 350ms cubic-bezier(0.4, 0, 0.2, 1), stroke-width 400ms cubic-bezier(0.4, 0, 0.2, 1)
+  transition: stroke 350ms cubic-bezier(0.4, 0, 0.2, 1),
+    stroke-width 400ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .fav-card-heart:hover {
@@ -288,7 +289,7 @@ ul {
   border-radius: 8px;
   cursor: pointer;
   background-color: #9bb537;
-  transition: color 400ms cubic-bezier(0.4, 0, 0.2, 1)
+  transition: color 400ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .fav-card-see-btn:hover {
@@ -309,3 +310,66 @@ ul {
   fill: #eea10c;
   opacity: 1;
 }
+
+/* Oops favorites */
+
+.fav-oops-wrap {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .fav-oops-wrap {
+    max-width: 335px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .fav-oops-wrap {
+    width: 481px;
+  }
+}
+
+.fav-card-toque {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 24px;
+  width: 68px;
+  height: 58px;
+}
+
+@media screen and (min-width: 768px) {
+  .fav-card-toque {
+    margin-bottom: 32px;
+    width: 97px;
+    height: 83px;
+  }
+}
+
+.fav-oops-text {
+  text-align: center;
+  font-family: Inter;
+  font-size: 14px; 
+  line-height: calc(18 / 14);
+  color: #050505;
+}
+
+
+
+color: #050505;
+text-align: center;
+font-family: Inter;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 24px; /* 150% */ 
+
+
+color: #050505;
+text-align: center;
+font-family: Inter;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 24px; /* 150% */ 
