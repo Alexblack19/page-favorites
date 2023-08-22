@@ -107,6 +107,6 @@ function onSeeRecipeClick(e) {
 window.addEventListener('pageshow', function () {
   if (localStorageGet() === null) {
     return;
-  }
+  }  
   markupCardFavorites(localStorageGet());
 });

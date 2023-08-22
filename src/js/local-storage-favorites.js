@@ -1,4 +1,5 @@
 import { markupCardFavorites } from './markup-card-favorites.js';
+import { oopsMarkup } from './oops-favorites.js';
 
 export function localStorageSet(dishArrBack) {
   let arrLocStorAdd;
@@ -15,8 +16,18 @@ export function localStorageSet(dishArrBack) {
     dishArrMarkup.push(objBack);
   }
 
-  markupCardFavorites(dishArrMarkup);
+  // markupCardFavorites(dishArrMarkup);
   localStorage.setItem('dishLocalKey', JSON.stringify(arrLocStorAdd));
+
+
+  oopsMarkup();  
+  if (localStorageGet() === []) {
+    console.log(localStorageGet());
+    oopsMarkup();
+    return;
+  } else {
+    
+  }
 }
 
 export function localStorageGet() {
