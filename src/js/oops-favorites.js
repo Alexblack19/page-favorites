@@ -1,5 +1,5 @@
 function oopsMarkup() {
-  const mainFavEl = document.querySelector('.main-favorites');
+  const sectionFavEl = document.querySelector('.favorites');
 
   const markup = `<div class="fav-oops-wrap visually-hidden">
                     <svg aria-label="oops-toque" class="fav-card-toque icon" viewBox="0 0 38 32">
@@ -55,10 +55,9 @@ function oopsMarkup() {
                         access in the future.
                     </p>
                   </div>`;
-  mainFavEl.insertAdjacentHTML('beforeend', markup);
+  sectionFavEl.insertAdjacentHTML('beforeend', markup);
   const oopsWrapEl = document.querySelector('.fav-oops-wrap');
   return oopsWrapEl;
 }
 
 export const oopsDivEl = oopsMarkup();
-
