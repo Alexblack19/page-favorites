@@ -1,4 +1,4 @@
-export function oopsMarkup() {
+function oopsMarkup() {
   const mainFavEl = document.querySelector('.main-favorites');
 
   const markup = `<div class="fav-oops-wrap visually-hidden">
@@ -59,3 +59,6 @@ export function oopsMarkup() {
   const oopsWrapEl = document.querySelector('.fav-oops-wrap');
   return oopsWrapEl;
 }
+
+export const oopsDivEl = oopsMarkup();
+
