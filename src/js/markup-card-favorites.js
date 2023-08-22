@@ -112,6 +112,7 @@ window.addEventListener('pageshow', function () {
   if (localStorageGet() === null) {
     return;
   }
+
   if (!localStorageGet().length) {
     oopsMarkup();
   } else {

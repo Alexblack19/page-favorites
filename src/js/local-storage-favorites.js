@@ -1,6 +1,10 @@
 import { markupCardFavorites } from './markup-card-favorites.js';
+import { oopsMarkup } from './oops-favorites.js';
 
 export function localStorageSet(dishArrBack) {
+  const oops = oopsMarkup();
+  oops.classList.add('visually-hidden');  
+  
   let arrLocStorAdd;
   let dishArrMarkup = [];
 
