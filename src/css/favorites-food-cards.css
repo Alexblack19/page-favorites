@@ -320,7 +320,6 @@ ul {
 }
 
 
-
 @media screen and (max-width: 768px) {
   .fav-oops-wrap {
     max-width: 323px;
@@ -329,6 +328,7 @@ ul {
 
 @media screen and (min-width: 768px) {
   .fav-oops-wrap {
+    margin-top: 48px;
     width: 481px;
   }
 }
