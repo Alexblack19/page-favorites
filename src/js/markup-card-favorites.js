@@ -93,9 +93,7 @@ function onHeartClick(e) {
         liElement.remove();
         localStorage.setItem('dishLocalKey', JSON.stringify(arrLocal));
 
-        console.log(localStorageGet());
-        console.log(localStorageGet());
-        if (localStorageGet() === []) {
+        if (!localStorageGet().length) {
           oopsMarkup();
         }
       }
@@ -106,7 +104,7 @@ function onHeartClick(e) {
 function onSeeRecipeClick(e) {
   const liElement = e.currentTarget.closest('.fav-card');
   const itemId = liElement.getAttribute('id');
-  // localStorage.setItem('key-see-fav', JSON.stringify(itemId));  
+  // localStorage.setItem('key-see-fav', JSON.stringify(itemId));
 }
 
 // Рендерінг сторінки після перезавантаження //
@@ -114,5 +112,9 @@ window.addEventListener('pageshow', function () {
   if (localStorageGet() === null) {
     return;
   }
-  markupCardFavorites(localStorageGet());
+  if (!localStorageGet().length) {
+    oopsMarkup();
+  } else {
+    markupCardFavorites(localStorageGet());
+  }
 });
