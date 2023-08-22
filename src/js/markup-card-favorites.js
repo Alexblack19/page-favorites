@@ -94,7 +94,7 @@ function onHeartClick(e) {
         localStorage.setItem('dishLocalKey', JSON.stringify(arrLocal));
 
         if (!localStorageGet().length) {
-          oopsMarkup();
+          oopsMarkup().classList.remove('visually-hidden');
         }
       }
     });
@@ -114,7 +114,7 @@ window.addEventListener('pageshow', function () {
   }
 
   if (!localStorageGet().length) {
-    oopsMarkup();
+    oopsMarkup().classList.remove('visually-hidden');
   } else {
     markupCardFavorites(localStorageGet());
   }

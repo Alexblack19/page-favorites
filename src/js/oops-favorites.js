@@ -1,8 +1,8 @@
 export function oopsMarkup() {
   const mainFavEl = document.querySelector('.main-favorites');
 
-  const markup = `<div class="fav-oops-wrap">
-                    <svg aria-label="oops-toque" class="fav-card-toque icon" viewBox="0 0 38 32">
+  const markup = `<div class="fav-oops-wrap visually-hidden">
+                    <svg aria-label="oops-toque" class="fav-card-toque icon" viewBox="0 0 38 32" width="68" height="58">
                         <path
                         fill="#9bb537"
                         style="fill: var(--color1, #9bb537)"
