@@ -37,10 +37,10 @@ import axios from 'axios';
 //========================
 import { localStorageSet } from './local-storage-favorites.js';
 
-const BASE_URL = 'https://tasty-treats-backend.p.goit.global/api';
 async function fetchDishFavorites(ID) {
-  const response = await axios.get(`${BASE_URL}/recipes/${ID}`);
-  return response.data;
+  const BASE_URL = 'https://tasty-treats-backend.p.goit.global/api';
+  const response = await axios.get(`${BASE_URL}/recipes/${ID}`);  
+  return response.data;  
 }
 
 async function fetchDishes(arrID) {
@@ -52,7 +52,7 @@ async function fetchDishes(arrID) {
     });
     // 2. Запускаємо усі проміси паралельно і чекаємо на їх завершення
     const dishArr = await Promise.all(arrayOfPromises);
-    localStorageSet(dishArr);
+    localStorageSet(dishArr);    
     return dishArr;
   } catch (error) {
     console.log(error.message);
